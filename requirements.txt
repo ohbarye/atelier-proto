@@ -1,0 +1,4 @@
+Django==1.8.2
+django-enumfield==1.2.1
+gunicorn==19.3.0
+whitenoise==1.0.6
