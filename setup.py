@@ -10,5 +10,6 @@ setup(
         'django-enumfield',
         'gunicorn',
         'whitenoise',
+        'dj_database_url',
     ],
 )
