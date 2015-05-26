@@ -1,0 +1,173 @@
+[
+{
+    "fields": {
+        "name": "Perfume"
+    },
+    "model": "atelier.artist",
+    "pk": 1
+},
+{
+    "fields": {
+        "name": "BUMP OF CHICKEN"
+    },
+    "model": "atelier.artist",
+    "pk": 2
+},
+{
+    "fields": {
+        "name": "MUSE"
+    },
+    "model": "atelier.artist",
+    "pk": 4
+},
+{
+    "fields": {
+        "image_type": 3,
+        "add_date": "2015-05-26T11:44:18Z",
+        "name": "\u5973\u6027"
+    },
+    "model": "atelier.artworkattr",
+    "pk": 1
+},
+{
+    "fields": {
+        "image_type": 2,
+        "add_date": "2015-05-26T11:52:15Z",
+        "name": "\u7537\u6027"
+    },
+    "model": "atelier.artworkattr",
+    "pk": 2
+},
+{
+    "fields": {
+        "image_type": 1,
+        "add_date": "2015-05-26T11:52:49Z",
+        "name": "\u72ac"
+    },
+    "model": "atelier.artworkattr",
+    "pk": 3
+},
+{
+    "fields": {
+        "image_type": 4,
+        "add_date": "2015-05-26T11:53:01Z",
+        "name": "\u6728"
+    },
+    "model": "atelier.artworkattr",
+    "pk": 4
+},
+{
+    "fields": {
+        "artwork_url": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/8D1D/E5C1/792B/0154_medium_front.jpg?cid=7915520",
+        "release_date": "2015-05-24T14:59:58Z",
+        "name": "GAME",
+        "artist": 1
+    },
+    "model": "atelier.album",
+    "pk": 1
+},
+{
+    "fields": {
+        "artwork_url": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/AF87/3ED3/48BB/8A70_medium_front.jpg?cid=7915520",
+        "release_date": "2015-05-24T15:02:54Z",
+        "name": "\u22bf",
+        "artist": 1
+    },
+    "model": "atelier.album",
+    "pk": 2
+},
+{
+    "fields": {
+        "artwork_url": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/3EA1/3E21/29BD/51FB_medium_front.jpg?cid=7915520",
+        "release_date": "2015-05-24T15:05:56Z",
+        "name": "JPN",
+        "artist": 1
+    },
+    "model": "atelier.album",
+    "pk": 3
+},
+{
+    "fields": {
+        "artwork_url": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/74AA/7B9B/CBD1/66C4_medium_front.jpg?cid=7915520",
+        "release_date": null,
+        "name": "Absolution",
+        "artist": 4
+    },
+    "model": "atelier.album",
+    "pk": 4
+},
+{
+    "fields": {
+        "artwork_url": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/1122/C1FE/6027/705A_medium_front.jpg?cid=7915520",
+        "release_date": null,
+        "name": "Black Holes &amp; Revelations",
+        "artist": 4
+    },
+    "model": "atelier.album",
+    "pk": 5
+},
+{
+    "fields": {
+        "artwork_url": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/CCC1/56F5/9625/D455_medium_front.jpg?cid=7915520",
+        "release_date": null,
+        "name": "\u30e6\u30b0\u30c9\u30e9\u30b7\u30eb",
+        "artist": 2
+    },
+    "model": "atelier.album",
+    "pk": 6
+},
+{
+    "fields": {
+        "album": 1,
+        "artwork_attr": 1,
+        "date_decided": "2015-05-25"
+    },
+    "model": "atelier.albumartworkattr",
+    "pk": 1
+},
+{
+    "fields": {
+        "album": 3,
+        "artwork_attr": 1,
+        "date_decided": "2015-05-25"
+    },
+    "model": "atelier.albumartworkattr",
+    "pk": 2
+},
+{
+    "fields": {
+        "album": 2,
+        "artwork_attr": 1,
+        "date_decided": "2015-05-25"
+    },
+    "model": "atelier.albumartworkattr",
+    "pk": 3
+},
+{
+    "fields": {
+        "album": 6,
+        "artwork_attr": 4,
+        "date_decided": "2015-05-26"
+    },
+    "model": "atelier.albumartworkattr",
+    "pk": 4
+},
+{
+    "fields": {
+        "album": 4,
+        "artwork_attr": 2,
+        "date_decided": "2015-05-26"
+    },
+    "model": "atelier.albumartworkattr",
+    "pk": 5
+},
+{
+    "fields": {
+        "album": 5,
+        "artwork_attr": 2,
+        "date_decided": "2015-05-26"
+    },
+    "model": "atelier.albumartworkattr",
+    "pk": 6
+}
+]
