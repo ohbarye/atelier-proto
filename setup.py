@@ -11,5 +11,6 @@ setup(
         'gunicorn',
         'whitenoise',
         'dj_database_url',
+        'psycopg2',
     ],
 )
