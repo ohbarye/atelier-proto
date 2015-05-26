@@ -12,15 +12,13 @@ class Artist(models.Model):
 class ImageType(enum.Enum):
     '''アルバムの属性(犬とか猫とか)'''
     DOG = 1
-    MAN = 2
-    WOMAN = 3
-    TREE = 4
+    CAT = 2
+    LADY = 3
 
     labels = {
-        DOG: 'dog',
-        MAN: 'man',
-        WOMAN: 'woman',
-        TREE: 'tree',
+        CAT: 'Cat',
+        DOG: 'Dog',
+        LADY: 'Lady',
     }
 
 class ArtworkAttr(models.Model):

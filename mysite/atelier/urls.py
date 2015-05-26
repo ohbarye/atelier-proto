@@ -15,12 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import patterns, include, url
 from django.views.generic import DetailView, ListView
-from atelier.models import Album
 
 urlpatterns = patterns('',
-    url(r'^$',
-        ListView.as_view(
-            queryset=Album.objects.order_by('-release_date')[:5],
-            context_object_name='latest_album_list',
-            template_name='index.html')),
+    url(r'^$', 'atelier.views.index'),
 )
