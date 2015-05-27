@@ -4,7 +4,7 @@
 {% if album_list %}
 
     <div id="">
-        Artwork of {{ image_type }}
+        Artwork of {{ selected_image_type }}
     </div>
 
     {% for album in album_list %}
@@ -12,7 +12,15 @@
     {% endfor %}
 
 {% else %}
-    <p>No artwork of {{ image_type }}.</p>
+    <p>No artwork of {{ selected_image_type }}.</p>
 {% endif %}
+
+<div>
+    <ul>
+    {% for image_type in image_type_list %}
+        <li><a href="/atelier/{{ image_type.0 }}/">show artworks of {{ image_type.1 }}</a></li>
+    {% endfor %}
+    </ul>
+</div>
 
 <script src="{% static "javascripts/atelier.js" %}" />

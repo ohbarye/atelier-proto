@@ -18,4 +18,5 @@ from django.views.generic import DetailView, ListView
 
 urlpatterns = patterns('',
     url(r'^$', 'atelier.views.index'),
+    url(r'^(?P<image_type>\d+)/$', 'atelier.views.index'),
 )
