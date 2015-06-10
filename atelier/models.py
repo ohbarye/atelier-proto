@@ -35,6 +35,7 @@ class ArtworkAttr(models.Model):
 class Album(models.Model):
     '''アルバム'''
     name = models.CharField('album name', max_length=255)
+    seven_static_id = models.IntegerField('7static id', blank=True, null=True)
     artist = models.ForeignKey(Artist, verbose_name='artist', related_name='impressions')
     release_date = models.DateTimeField('release date', blank=True, null=True)
     artwork_attr = models.ManyToManyField(ArtworkAttr, through='AlbumArtworkAttr')
