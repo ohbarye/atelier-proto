@@ -15,7 +15,18 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=255, verbose_name=b'album name')),
-                ('release_date', models.DateTimeField(verbose_name=b'date published')),
+                ('seven_static_id', models.IntegerField(unique=True, null=True, verbose_name=b'7static id', blank=True)),
+                ('release_date', models.DateTimeField(null=True, verbose_name=b'release date', blank=True)),
+                ('artwork_url', models.CharField(max_length=255, verbose_name=b'artwork url', blank=True)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='AlbumArtworkClass',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('score_rank', models.IntegerField(verbose_name=b'rank')),
+                ('score', models.DecimalField(null=True, verbose_name=b'score', max_digits=18, decimal_places=17, blank=True)),
+                ('album', models.ForeignKey(to='atelier.Album')),
             ],
         ),
         migrations.CreateModel(
@@ -26,15 +37,30 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='Category',
+            name='ArtworkClass',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('class_id', models.CharField(unique=True, max_length=9, verbose_name=b'class id')),
                 ('name', models.CharField(max_length=255, verbose_name=b'type name')),
             ],
+        ),
+        migrations.AddField(
+            model_name='albumartworkclass',
+            name='artwork_class',
+            field=models.ForeignKey(to='atelier.ArtworkClass'),
         ),
         migrations.AddField(
             model_name='album',
             name='artist',
             field=models.ForeignKey(related_name='impressions', verbose_name=b'artist', to='atelier.Artist'),
+        ),
+        migrations.AddField(
+            model_name='album',
+            name='artwork_class',
+            field=models.ManyToManyField(to='atelier.ArtworkClass', through='atelier.AlbumArtworkClass'),
+        ),
+        migrations.AlterUniqueTogether(
+            name='albumartworkclass',
+            unique_together=set([('album', 'artwork_class', 'score_rank')]),
         ),
     ]
