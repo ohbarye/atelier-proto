@@ -1,0 +1,10 @@
+{% load staticfiles %}
+
+<!DOCTYPE HTML>
+
+<h1>{{ artwork_class.name }}</h1>
+
+{% for album_artwork_class in album_artwork_class_list %}
+	<h3>{{ album_artwork_class.album.name }} / {{ album_artwork_class.album.artist.name }}  [score] {{ album_artwork_class.score }}</h3>
+	<a href="{{ album_artwork_class.album.artwork_url }}" class="image"><img src="{{ album_artwork_class.album.artwork_url }}" alt=""></a>
+{% endfor %}
