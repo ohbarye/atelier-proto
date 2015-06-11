@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('score_rank', models.IntegerField(verbose_name=b'rank')),
-                ('score', models.DecimalField(null=True, verbose_name=b'score', max_digits=18, decimal_places=17, blank=True)),
+                ('score', models.DecimalField(verbose_name=b'score', max_digits=18, decimal_places=17)),
                 ('album', models.ForeignKey(to='atelier.Album')),
             ],
         ),
@@ -41,6 +41,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('class_id', models.CharField(unique=True, max_length=9, verbose_name=b'class id')),
+                ('class_id_number', models.IntegerField(unique=True, verbose_name=b'rank')),
                 ('name', models.CharField(max_length=255, verbose_name=b'type name')),
             ],
         ),

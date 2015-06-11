@@ -2,22 +2,20 @@
 from django.db import models
 
 class Artist(models.Model):
-    '''アーティスト'''
     name = models.CharField('artist name', max_length=255)
 
     def __unicode__(self):
         return self.name
 
 class ArtworkClass(models.Model):
-    '''アルバムの画像の分類'''
     class_id = models.CharField('class id', max_length=9, unique=True)
+    class_id_number = models.IntegerField('rank', unique=True)
     name = models.CharField('type name', max_length=255)
 
     def __unicode__(self):
         return self.name
 
 class Album(models.Model):
-    '''アルバム'''
     name = models.CharField('album name', max_length=255)
     seven_static_id = models.IntegerField('7static id', blank=True, null=True, unique=True)
     artist = models.ForeignKey(Artist, verbose_name='artist', related_name='impressions')
@@ -32,7 +30,7 @@ class AlbumArtworkClass(models.Model):
     album = models.ForeignKey(Album)
     artwork_class = models.ForeignKey(ArtworkClass)
     score_rank = models.IntegerField('rank')
-    score = models.DecimalField('score', max_digits=18, decimal_places=17, blank=True, null=True)
+    score = models.DecimalField('score', max_digits=18, decimal_places=17)
 
     class Meta:
         unique_together=(('album','artwork_class','score_rank'))
