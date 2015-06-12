@@ -1,10 +1,21 @@
 {% load staticfiles %}
 
-<!DOCTYPE HTML>
+<form action="/atelier/class/" method="POST">
+{{ form.as_table }}
+<input type="submit" value="Submit" />
+</form>
 
-<h1>{{ artwork_class.name }}</h1>
+{% for class_list in class_lists %}
+<div style="float: left; width: 360px; ">
+<h1>{{ class_list.class.name }}</h1>
 
-{% for album_artwork_class in album_artwork_class_list %}
-	<h3>{{ album_artwork_class.album.name }} / {{ album_artwork_class.album.artist.name }}  [score] {{ album_artwork_class.score }}</h3>
-	<a href="{{ album_artwork_class.album.artwork_url }}" class="image"><img src="{{ album_artwork_class.album.artwork_url }}" alt=""></a>
+	{% for album_artwork_class in class_list.list %}
+	<div>
+		{{ album_artwork_class.album.name }} / {{ album_artwork_class.album.artist.name }}</br>
+		[score] {{ album_artwork_class.score }}</br>
+		<img src="{{ album_artwork_class.album.artwork_url }}" alt="">
+	</div>
+	{% endfor %}
+
+</div>
 {% endfor %}
