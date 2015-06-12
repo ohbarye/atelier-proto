@@ -1,13 +1,15 @@
 {% load staticfiles %}
 
+<a href="/atelier/classList/">show class list</a>
+
 <form action="/atelier/class/" method="POST">
-{{ form.as_table }}
+{{ form.as_p }}
 <input type="submit" value="Submit" />
 </form>
 
 {% for class_list in class_lists %}
 <div style="float: left; width: 360px; ">
-<h1>{{ class_list.class.name }}</h1>
+<h1>{{ class_list.class.name }}({{ class_list.list|length }})</h1>
 
 	{% for album_artwork_class in class_list.list %}
 	<div>

@@ -57,8 +57,8 @@ def class_view(request):
         form = SearchClassForm(request.POST)
 
         if form.is_valid():
-            id_from = form.cleaned_data['class_id_number_from']
-            id_to   = form.cleaned_data['class_id_number_to']
+            id_from = form.cleaned_data['class_id_from']
+            id_to   = form.cleaned_data['class_id_to']
             #only_rank_top = form.cleaned_data['only_rank_top']
 
             class_lists = get_album_artwork_class_lists(id_from,id_to)

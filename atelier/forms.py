@@ -7,8 +7,8 @@ class SearchClassForm(forms.Form):
 
     choices = []
     for aw_class in aw_classes:
-        choices.append((aw_class.class_id_number,aw_class.class_id))
+        choices.append((aw_class.class_id_number,aw_class.class_id + ':' + aw_class.name))
 
-    class_id_number_from = forms.ChoiceField(choices)
-    class_id_number_to   = forms.ChoiceField(choices)
+    class_id_from = forms.ChoiceField(choices)
+    class_id_to   = forms.ChoiceField(choices)
 #    only_rank_top = forms.BooleanField(required=False)
