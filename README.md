@@ -25,7 +25,6 @@ $ source env/bin/activate
 
 ```bash
 # on other terminal
-$ open http://localhost:8000/atelier/
 $ open http://localhost:8000/atelier/class/
 $ open http://localhost:8000/atelier/classList/
 ```
