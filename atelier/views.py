@@ -37,16 +37,18 @@ def class_list_view(request):
                             })
 
 
-def get_album_artwork_class_lists(id_from,id_to):
+def get_album_artwork_class_lists(id_from,id_to,rank,score,omit_zero):
     aw_classes = ArtworkClass.objects.filter(class_id_number__range=(id_from,id_to))
 
     lists = []
     for aw_class in aw_classes:
-        lists.append(
-            {   'class': aw_class,
-                'list': AlbumArtworkClass.objects.filter(artwork_class__class_id_number=aw_class.class_id_number).order_by('-score')
-                }
-            )
+        aac = AlbumArtworkClass.objects.filter(artwork_class__class_id_number=aw_class.class_id_number,score_rank__lte=rank,score__gte=score).order_by('-score')
+        if not omit_zero or len(aac) > 0:
+            lists.append(
+                {   'class': aw_class,
+                    'list': aac
+                    }
+                )
 
     return lists
 
@@ -59,9 +61,11 @@ def class_view(request):
         if form.is_valid():
             id_from = form.cleaned_data['class_id_from']
             id_to   = form.cleaned_data['class_id_to']
-            #only_rank_top = form.cleaned_data['only_rank_top']
+            rank    = form.cleaned_data['rank_threshold']
+            score   = form.cleaned_data['score_threshold']
+            omit_zero = form.cleaned_data['omit_zero_count']
 
-            class_lists = get_album_artwork_class_lists(id_from,id_to)
+            class_lists = get_album_artwork_class_lists(id_from,id_to,rank,score,omit_zero)
 
             return render_to_response('class_view.html',
                                     {

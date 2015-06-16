@@ -15,6 +15,7 @@
 	<div>
 		{{ album_artwork_class.album.name }} / {{ album_artwork_class.album.artist.name }}</br>
 		[score] {{ album_artwork_class.score }}</br>
+		[rank] {{ album_artwork_class.score_rank }}</br>
 		<img src="{{ album_artwork_class.album.artwork_url }}" alt="">
 	</div>
 	{% endfor %}
