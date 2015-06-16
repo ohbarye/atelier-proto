@@ -7,10 +7,8 @@ setup(
     include_package_data=True,
     install_requires=[
         'django',
-        'django-enumfield',
         'gunicorn',
         'whitenoise',
         'dj_database_url',
-        'psycopg2',
     ],
 )

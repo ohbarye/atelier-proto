@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-if 'local' in os.uname()[1]:
+if 'local' in os.uname()[1] or 'ip-172-30-0-231' in os.uname()[1]:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
