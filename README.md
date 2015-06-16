@@ -13,10 +13,8 @@ $ virtualenv env
 $ source env/bin/activate
 (env)$ pip install -e .
 
-# if data file does not exist
 (env)$ python manage.py migrate
-# if data is not loaded
-(env)$ python manage.py loaddata atelier/fixtures/init_data.json
+(env)$ python manage.py loaddata atelier/fixtures/initial_data.json
 
 (env)$ python manage.py runserver
 ```
@@ -73,7 +71,7 @@ $ python manage.py shell
 ### dump data
 
 ```bash
-$ python manage.py dumpdata --format=json --indent=4 > atelier/fixtures/init_data.json
+$ python manage.py dumpdata --format=json --indent=4 > atelier/fixtures/initial_data.json
 
 ```
 
@@ -82,7 +80,7 @@ $ python manage.py dumpdata --format=json --indent=4 > atelier/fixtures/init_dat
 ```bash
 $ heroku create atelier-proto
 $ heroku run python manage.py migrate
-$ heroku run python manage.py loaddata atelier/fixtures/init_data.json
+$ heroku run python manage.py loaddata atelier/fixtures/initial_data.json
 ```
 
 ### destroy app
