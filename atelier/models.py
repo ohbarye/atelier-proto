@@ -11,6 +11,7 @@ class ArtworkClass(models.Model):
     class_id = models.CharField('class id', max_length=9, unique=True)
     class_id_number = models.IntegerField('class id number', unique=True)
     name = models.CharField('type name', max_length=255)
+    name_jp = models.CharField('type name in Japanese', max_length=255)
 
     def __unicode__(self):
         return self.name

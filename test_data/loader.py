@@ -45,7 +45,7 @@ def load_class():
 
     for row in class_reader:
         class_id_number = int(row[0][1:])
-        artwork_class = ArtworkClass(class_id=row[0],class_id_number=class_id_number,name=row[1])
+        artwork_class = ArtworkClass(class_id=row[0],class_id_number=class_id_number,name=row[1],name_jp=row[2])
         artwork_class.save()
 
 def load_recognition():
