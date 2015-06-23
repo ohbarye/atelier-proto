@@ -11,6 +11,6 @@ class SearchClassForm(forms.Form):
 
     class_id_from   = forms.ChoiceField(choices)
     class_id_to     = forms.ChoiceField(choices)
-    rank_threshold  = forms.ChoiceField([(1,1),(2,2),(3,3)])
+    rank_threshold  = forms.ChoiceField([(1,1),(2,2),(3,3)],initial=3)
     score_threshold = forms.CharField(initial='0.20')
     omit_zero_count = forms.BooleanField(required=False,initial=True)
