@@ -24,4 +24,5 @@ urlpatterns = patterns('',
     url(r'^api/allClass/$', 'atelier.views.get_all_class'),
     url(r'^api/class/$', 'atelier.views.get_class_by_id'),
     url(r'^api/artworks/$', 'atelier.views.get_artworks'),
+    url(r'^main/$', 'atelier.views.main_view'),
 )

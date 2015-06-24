@@ -1,0 +1,115 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Parody Record Atelier</title>
+
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="{% static "javascripts/lib/three-js/build/three.min.js" %}"></script>
+<script src="{% static "javascripts/lib/three-js/js/controls/FlyControls.js" %}"></script>
+<script src="{% static "javascripts/lib/three-js/js/controls/orbitControls.js" %}"></script>
+<script src="{% static "javascripts/lib/tween-js/tween.min.js" %}"></script>
+<script src="{% static "javascripts/lib/stats-js/stats.min.js" %}"></script>
+
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lobster', serif;
+
+  }
+  html, body{
+    height: 100%;
+    margin: 0;
+  }
+
+  body{
+
+    /*background-color: #000000;*/
+    background-image: url("{% static "html5up/images/atelier/bg.jpg" %}");
+    position: relative;
+
+  }
+
+  #titleImage{
+
+    width: 300px;
+    padding-top: 30px;
+
+  }
+
+  #mainContent{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  #leftPanel{
+    width: 300px;
+    height: 100%;
+    float: left;
+    background-color: #33CCFF;
+    opacity: 0.8;
+
+  }
+
+  #rightPanel{
+
+    margin-left: 300px;
+    height: 100%;
+    /*background-image: url("./Concrete-wall-texture041.jpg");*/
+  }
+
+  #stats{
+    position: absolute;
+    bottom: 0px;
+    top: 5px;
+    margin-left: 5px;
+
+  }
+
+  .category{
+    font-size: 24px;
+    list-style-type: none;
+    font-color: #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    padding: 5px;
+    margin: 20px;
+
+  }
+
+  #about{
+
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+
+  }
+
+</style>
+
+</head>
+<body>
+
+
+<div id="leftPanel">
+  <img src="{% static "html5up/images/atelier/Record Atelier-logo.png" %}" id="titleImage" width="300px"></img>
+  <ul>
+    <li class="category" id="animal">Animal</li>
+    <li class="category" id="face">Human Face</li>
+    <li class="category" id="animation">Animation</li>
+    <li class="category" id="instrument">Instrument</li>
+  </ul>
+
+  <ul id="about">about</ul>
+</div>
+
+<div id="rightPanel"></div>
+
+<script src="{% static "javascripts/main.js" %}"></script>
+
+</body>
+
+</html>

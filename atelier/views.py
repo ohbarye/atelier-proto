@@ -79,6 +79,9 @@ def class_list_view(request):
     return render_to_response('class_list_view.html',
                 {'class_list': ArtworkClass.objects.all(),})
 
+def main_view(request):
+    return render_to_response('ParodyRecordAtelier.html')
+
 def render_json_response(request, data, status=None):
     '''response を JSON で返却'''
     json_str = json.dumps(data, ensure_ascii=False, indent=2)
